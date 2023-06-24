@@ -1,6 +1,8 @@
 import app from './config/app.js';
 import './config/database.js';
 
-app.listen(3000);
+const PORT = 3000;
 
-console.log('server listen on port', 3000);
+app.listen(PORT);
+
+console.log(`Server running on http://localhost:${PORT}`);

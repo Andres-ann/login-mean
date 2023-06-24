@@ -2,7 +2,8 @@ import express from 'express';
 import morgan from 'morgan';
 import pkg from '../../package.json' assert { type: 'json' };
 
-import pathologiesRoutes from '../routes/pathologies.routes.js';
+import categoriesRoutes from '../routes/categories.routes.js';
+import authRoutes from '../routes/auth.routes.js';
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.get('/', (req, res) => {
 	});
 });
 
-app.use('/api/pathologies', pathologiesRoutes);
+app.use('/api/categories', categoriesRoutes);
+app.use('/api/auth', authRoutes);
 
 export default app;

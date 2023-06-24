@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
 //schema
-const pathologySchemma = new mongoose.Schema(
+const categorySchemma = new mongoose.Schema(
 	{
-		pathology: {
+		category: {
 			type: String,
 			required: [true, 'please complete this field'],
 		},
@@ -15,4 +15,4 @@ const pathologySchemma = new mongoose.Schema(
 );
 
 //modelo a partir del esquema
-export const PathologyModel = new mongoose.model('Pathology', pathologySchemma);
+export const CategoryModel = new mongoose.model('Category', categorySchemma);

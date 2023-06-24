@@ -1,4 +1,4 @@
-import { UserModel } from '../models/User.model.js';
+import { UserModel } from '../models/user.model.js';
 import { RoleModel } from '../models/role.model.js';
 import jwt from 'jsonwebtoken';
 import config from '../config/config.js';

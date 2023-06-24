@@ -1,4 +1,4 @@
-import { CategoryModel } from '../models/Categories.model.js';
+import { CategoryModel } from '../models/categories.model.js';
 
 // Metodo para crear un registro
 export const createCategory = async (req, res) => {

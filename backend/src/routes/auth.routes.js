@@ -1,8 +1,14 @@
 import { Router } from 'express';
-import * as userCtrl from '../controllers/auth.controller.js';
 const router = Router();
 
-router.post('/signup', userCtrl.signup);
-router.post('/signin', userCtrl.signin);
+import * as authCtrl from '../controllers/auth.controller.js';
+import { verifySignup } from '../middlewares/index.js';
+
+router.post(
+  '/signup',
+  [verifySignup.checkDuplicateuernameOrEmail, verifySignup.checkRolesExisted],
+  authCtrl.signup
+);
+router.post('/signin', authCtrl.signin);
 
 export default router;

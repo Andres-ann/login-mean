@@ -1,0 +1,73 @@
+<div
+  class="bg-dark-subtle d-flex flex-column align-items-center justify-content-center h-100"
+>
+  <div class="card col-10 col-sm-4 col-lg-3 shadow-lg p-5">
+    <!-- Contenido de la tarjeta -->
+    <div class="mb-sm-5">
+      <img src="assets/img/focus-logo.png" alt="logo" class="img-fluid" />
+    </div>
+
+    <form class="p-3" (ngSubmit)="login()">
+      <!-- Campos del formulario -->
+      <div class="mb-3">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="loginData.email"
+          class="form-control"
+          placeholder="Email"
+          autofocus
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          [type]="loginData.showPassword ? 'text' : 'password'"
+          name="password"
+          id="password"
+          name="password"
+          [(ngModel)]="loginData.password"
+          class="form-control"
+          placeholder="Contraseña"
+          required
+        />
+      </div>
+
+      <div class="form-check text-start mb-5">
+        <div class="d-flex align-items-center">
+          <div class="col">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="checkLogin"
+              [checked]="loginData.showPassword"
+              (change)="loginData.showPassword = !loginData.showPassword"
+            />
+            <label class="form-check-label text-muted" for="checkLogin"
+              >Mostrar contraseña</label
+            >
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="alert alert-danger text-center"
+        role="alert"
+        *ngIf="showAlert"
+      >
+        {{ alertMessage }}
+      </div>
+
+      <div class="row m-1">
+        <button type="submit" class="btn btn-dark">Iniciar sesión</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="row text-center mt-3">
+    <div class="col text-muted">
+      <p>&copy; 2023 focus | Todos los derechos reservados.</p>
+    </div>
+  </div>
+</div>

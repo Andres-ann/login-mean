@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import morgan from 'morgan';
 import pkg from '../../package.json' assert { type: 'json' };
 import { createRoles } from '../libs/initialSetup.js';
@@ -8,6 +9,7 @@ import authRoutes from '../routes/auth.routes.js';
 import usersRoutes from '../routes/user.routes.js';
 
 const app = express();
+app.use(cors());
 createRoles();
 
 app.use(morgan('dev'));
